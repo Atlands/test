@@ -9,8 +9,8 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.qc.test'
-                artifactId = 'test'
+                groupId = 'com.github.Atlands'
+                artifactId = 'mylibrary'
                 version = '0.0.2'
             }
         }
@@ -20,6 +20,10 @@ afterEvaluate {
 android {
     namespace 'com.qc.mylibrary'
     compileSdk 33
+
+    publishing {
+        singleVariant("release")
+    }
 
     defaultConfig {
         minSdk 24
